@@ -18,40 +18,44 @@ let shoes = 89.78;
 
 // 1. If divided evenly, how much would each sibling get for the week?
 let even = weeklyAllowance / 3;
+console.log(even)
 // 2. How many games can Jordan buy with their cut?
-let get = even / game
+let get = Math.floor(even / game)
+console.log(get)
 // 3. The cost of games just went up by a dollar and shoes are on sale at 50% (half) off. Change the variables to their new prices.
-game = 16.99;
-shoes = 44.89;
+game += 1
+shoes /= 2
+console.log(game.toFixed(2), shoes)
 // 4. Quinn and Ricardo are twins. If they put their money together, how many on sale shoes can they buy in a month (4 weeks)?
-let add = even + even 
-let cop = add / add
+let add = Math.floor(((even * 2)*4)/shoes)
+console.log(add)
 // 5. How many more games can they buy if they put their money together compared to if they had bought games on their own?
-3
+let games = Math.floor(weeklyAllowance / game)
+console.log(games)
 // 6. Print out the three siblings' names. "The three siblings are __, __, and ___."
 console.log("The three siblins are " + sibling1 + ", " + sibling2 + ", " + sibling3)
 // 7. Use console.log() and a built-in method to count how many characters are in Ricardo's name.
 console.log(sibling3.length)
 // 8. Use console.log() and a built-in method to print out the string "RICARDO MONTOYA DE LA ROSA RAMIREZ"
-console.log(sibling3.toString)
+console.log(sibling3.toUpperCase())
 // 9. Use console.log() and a built-in method to print out the string "ricardo montoya de la rosa ramirez"
-console.log()
+console.log(sibling3.toLowerCase())
 // 10. Use console.log() and a built-in method to print out Ricardo's name, but with all the instances of the letter a removed or deleted.
 console.log(sibling3.slice);
 // 11. Use console.log() and a built-in method to print out "De La Rosa"
-console.log(sibling3.slice[7])
+console.log(sibling3.substring(15, 26));
 // Medium Challenges
 
 // 12. Rewrite these function as an arrow function.
 /// Then, call them with different inputs to check the result.
 
-const getRandomNum = () => {
-    return Math.floor(Math.random() * 100);
-}
-
-const greeting= (name) => {
-    return `Hello ${name}, I'm glad you can make it!`;
-}
+// const getRandomNum = () => {
+//     return Math.floor(Math.random() * 100);
+// }
+const getRandomNum = () => Math.floor(Math.random() * 100);
+console.log(getRandomNum())
+const greeting= (name) =>  `Hello ${name}, I'm glad you can make it!`;
+console.log(greeting())
 
 const perfectRoot =  (x) => {
     let root = Math.sqrt(x);
@@ -61,6 +65,7 @@ const perfectRoot =  (x) => {
         return "No perfect root"
     }
 }
+console.log(perfectRoot())
 
 // 13. Fix/Finish the following functions.
 /// Then, call them with at least 2 different inputs to ensure they work.
@@ -68,13 +73,16 @@ const perfectRoot =  (x) => {
 /// a. Adds 2 numbers and returns the sum
 const addNums = (x, y) => {
     let sum = x + y;
+    return sum
 }
+
 // uncomment the line below, to call the function, and add one more function call
  console.log( addNums(4, 6) );
 
 
 /// b. Prints a special message if name is "Beyonce"
 const isBeyonce = (name) => {
+    let name = prompt("what is your name");
      if( name = "Beyonce" ) { 
          return "Welcome Queen!";
      } else {
@@ -94,6 +102,7 @@ const reduceEvens = (x) => {
          return x;
      }
 }
+console.log(reduceEvens())
 //Write your own function calls
 const findSum = (x) => {
     x = 2
@@ -101,7 +110,7 @@ const findSum = (x) => {
     let total = x + num
     return("the answer is " + total);
 }
-
+console.log(findSums());
 // 14. Write a function called shortenString(string) that returns the first 10 characters of a string if it is longer than 10
 //remove all
 const shortenString = (string) => {
@@ -112,7 +121,7 @@ if(string.length < 10){
 }
 }
 
-
+console.log(shortenString());
 
 // Spicy Challenges
 let burger = 5.00;
@@ -132,7 +141,7 @@ if( budget > 5 ){
     return("Sorry, No burgers for you")
 }
 }
-buyBurgers()
+console.log(buyBurgers());
 // 16. A meal consists of 1 burger, 1 fry, and 1 soda.
 /// Write a function called buyMeals(budget) that tells the user how many meals they can buy and how much money they will have left over.
 // Prompt the user for their budget and call the function.
@@ -145,7 +154,7 @@ let leftOver = amount - total
 alert("You can have " + meals + " meals and you will have " + leftOver + " dollars left over");
 
 }
-buyMeals()
+console.log(buyMeals());
 
 // 17. [Challenge] Write a function missingLeg(side1, side2) that takes in the length of a hypotenuse and a leg of a right triangle and prints out the missing leg's length
 // Prompt the user for the two sides and call the function
@@ -160,7 +169,7 @@ if (len1 > len2){
 }
 }
 
-messingLeg()
+console.log(messingLeg());
 
 // 18. [Super Challenge] In math, Factorial is the product of an integer and all the integers below it.
 /// For example: factorial(3) = 3*2*1 = 6 ---  factorial(5) = 5*4*3*2*1 = 120
